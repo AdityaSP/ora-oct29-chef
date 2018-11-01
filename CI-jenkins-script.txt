@@ -21,4 +21,15 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.war'
    }
+   stage('CD Preparation') {
+      sh "cp '/var/lib/jenkins/workspace/oct31/target/MyAppDemo.war' '/home/vagrant/oct29/cookbooks/oct31/files/'"
+      sh "cp '/var/lib/jenkins/workspace/oct31/dbrelease/databaserelease.sql' '/home/vagrant/oct29/cookbooks/oct31/files/'"
+   }
+   stage('CD Knife Runs'){
+       sh "cd /home/vagrant/oct29;knife cookbook upload oct31"
+   }
+   stage('CD Node Runs'){
+       sh "cd /home/vagrant/oct29;echo vagrant | knife ssh 10.1.1.34 'sudo chef-client' --manual-list --ssh-user vagrant --identity-file /home/vagrant/oct29/node1-ubuntu-key"
+   }
+   
   }
