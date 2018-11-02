@@ -1,0 +1,8 @@
+name             'mytrial'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures mytrial'
+long_description 'Installs/Configures mytrial'
+version          '0.1.0'
+depends 'apt', '~> 6.0.1'

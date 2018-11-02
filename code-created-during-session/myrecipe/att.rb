@@ -1,0 +1,6 @@
+log "IP ADDRESS : #{node['ipaddress']}"
+log "IP ADDRESS : #{node[:ipaddress]}"
+log "IP ADDRESS : #{node.ipaddress}"
+log "KERNEL NAME : #{node['kernel']['name']}"
+log "KERNEL NAME : #{node[:kernel][:name]}"
+log "KERNEL NAME : #{node.kernel.name}"

@@ -1,0 +1,61 @@
+vagrant@10.1.1.34's password: 
+10.1.1.34 bash: warning: setlocale: LC_ALL: cannot change locale (en_US)
+10.1.1.34 Starting Chef Client, version 12.17.44[0m
+10.1.1.34 resolving cookbooks for run list: ["devopsdemo"][0m
+10.1.1.34 Synchronizing Cookbooks:[0m
+10.1.1.34   - devopsdemo (0.1.0)[0m
+10.1.1.34 Installing Cookbook Gems:[0m
+10.1.1.34 Compiling Cookbooks...[0m
+10.1.1.34 Converging 3 resources[0m
+10.1.1.34 Recipe: devopsdemo::default[0m
+10.1.1.34   * cookbook_file[/var/lib/tomcat7/webapps/MyAppDemo.war] action create
+10.1.1.34     [31m* Parent directory /var/lib/tomcat7/webapps does not exist.[0m[0m
+10.1.1.34     ================================================================================[0m
+10.1.1.34     [31mError executing action `create` on resource 'cookbook_file[/var/lib/tomcat7/webapps/MyAppDemo.war]'[0m
+10.1.1.34     ================================================================================[0m
+10.1.1.34     
+10.1.1.34 [0m    Chef::Exceptions::EnclosingDirectoryDoesNotExist[0m
+10.1.1.34     ------------------------------------------------[0m
+10.1.1.34     Parent directory /var/lib/tomcat7/webapps does not exist.[0m
+10.1.1.34     
+10.1.1.34 [0m    Resource Declaration:[0m
+10.1.1.34     ---------------------[0m
+10.1.1.34     # In /var/chef/cache/cookbooks/devopsdemo/recipes/default.rb
+10.1.1.34 [0m    
+10.1.1.34 [0m      7: cookbook_file '/var/lib/tomcat7/webapps/MyAppDemo.war' do
+10.1.1.34 [0m      8:   source 'MyAppDemo.war'
+10.1.1.34 [0m      9:   action :create
+10.1.1.34 [0m     10: end
+10.1.1.34 [0m     11: 
+10.1.1.34 [0m    
+10.1.1.34 [0m    Compiled Resource:[0m
+10.1.1.34     ------------------[0m
+10.1.1.34     # Declared in /var/chef/cache/cookbooks/devopsdemo/recipes/default.rb:7:in `from_file'
+10.1.1.34 [0m    
+10.1.1.34 [0m    cookbook_file("/var/lib/tomcat7/webapps/MyAppDemo.war") do
+10.1.1.34 [0m      provider Chef::Provider::CookbookFile
+10.1.1.34 [0m      action [:create]
+10.1.1.34 [0m      retries 0
+10.1.1.34 [0m      retry_delay 2
+10.1.1.34 [0m      default_guard_interpreter :default
+10.1.1.34 [0m      source "MyAppDemo.war"
+10.1.1.34 [0m      declared_type :cookbook_file
+10.1.1.34 [0m      cookbook_name "devopsdemo"
+10.1.1.34 [0m      recipe_name "default"
+10.1.1.34 [0m      path "/var/lib/tomcat7/webapps/MyAppDemo.war"
+10.1.1.34 [0m    end
+10.1.1.34 [0m    
+10.1.1.34 [0m    Platform:[0m
+10.1.1.34     ---------[0m
+10.1.1.34     x86_64-linux[0m
+10.1.1.34     
+10.1.1.34 [0m[0m
+10.1.1.34 Running handlers:[0m
+10.1.1.34 [2016-12-17T18:55:10+00:00] ERROR: Running exception handlers
+10.1.1.34 Running handlers complete
+10.1.1.34 [0m[2016-12-17T18:55:10+00:00] ERROR: Exception handlers complete
+10.1.1.34 Chef Client failed. 0 resources updated in 01 seconds[0m
+10.1.1.34 [2016-12-17T18:55:10+00:00] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out
+10.1.1.34 [2016-12-17T18:55:10+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+10.1.1.34 [2016-12-17T18:55:10+00:00] ERROR: cookbook_file[/var/lib/tomcat7/webapps/MyAppDemo.war] (devopsdemo::default line 7) had an error: Chef::Exceptions::EnclosingDirectoryDoesNotExist: Parent directory /var/lib/tomcat7/webapps does not exist.
+10.1.1.34 [2016-12-17T18:55:10+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)

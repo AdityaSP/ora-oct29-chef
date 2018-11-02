@@ -1,0 +1,11 @@
+{
+  "name": "workingboxrole",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+	"recipe[apache2-install]",
+        "recipe[apache2-conf]",
+        "recipe[tomcat7-install]",
+        "recipe[tomcat7-conf]"
+   ]
+}
