@@ -55,6 +55,7 @@ knife cookbook show mycookbook
 # create role
 step11
     Way 1
+    0. create roles folder and cd to roles
     1. first create vi web.json
     2. knife role from file web.json
 
@@ -93,6 +94,9 @@ knife environment show dev
 step13
 bootstrap activity
 knife bootstrap 10.1.1.34 –-ssh-user vagrant –-sudo –-identity-file /vagrant/vagrant_private_key –-node-name node1-ubuntu
+
+step 15
+knife node set run_list node1-ubuntu 'role[web]'
 
 step14
 chef-client runs
